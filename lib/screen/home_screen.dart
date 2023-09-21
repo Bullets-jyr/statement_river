@@ -3,6 +3,7 @@ import 'package:statement_river/layout/default_layout.dart';
 import 'package:statement_river/screen/future_provider_screen.dart';
 import 'package:statement_river/screen/state_notifier_provider_screen.dart';
 import 'package:statement_river/screen/state_provider_screen.dart';
+import 'package:statement_river/screen/stream_provider_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -42,6 +43,16 @@ class HomeScreen extends StatelessWidget {
               );
             },
             child: Text('FutureProviderScreen'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => StreamProviderScreen(),
+                ),
+              );
+            },
+            child: Text('StreamProviderScreen'),
           ),
         ],
       ),
