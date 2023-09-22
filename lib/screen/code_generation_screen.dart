@@ -9,12 +9,50 @@ class CodeGenerationScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state1 = ref.watch(gStateProvider);
+    final state2 = ref.watch(gStateFutureProvider);
+    final state3 = ref.watch(gStateFuture2Provider);
 
     return DefaultLayout(
       title: 'CodeGenerationScreen',
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text('State1 : $state1'),
+          // Text('State2 : $state2'),
+          state2.when(
+            // data가 있을 때
+            data: (data) {
+              return Text(
+                'State2 : $data',
+                textAlign: TextAlign.center,
+              );
+            },
+            // error가 있을 때
+            error: (err, stack) => Text(
+              err.toString(),
+            ),
+            // loading 일 때
+            loading: () => Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
+          state3.when(
+            // data가 있을 때
+            data: (data) {
+              return Text(
+                'State3 : $data',
+                textAlign: TextAlign.center,
+              );
+            },
+            // error가 있을 때
+            error: (err, stack) => Text(
+              err.toString(),
+            ),
+            // loading 일 때
+            loading: () => Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
         ],
       ),
     );
