@@ -18,6 +18,7 @@ class ShoppingItemModel {
     required this.isSpicy,
   });
 
+  // 꿀팁 보너스: copyWith 만드는 방법
   ShoppingItemModel copyWith({
     String? name,
     int? quantity,

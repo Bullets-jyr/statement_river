@@ -8,6 +8,7 @@ class FutureProviderScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // AsyncValue는 when을 가지고 있습니다.
     final AsyncValue state = ref.watch(multipleFutureProvider);
 
     return DefaultLayout(
@@ -16,8 +17,9 @@ class FutureProviderScreen extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          // 일종의 FutureBuilder
           state.when(
-            // data가 있을 때
+            // loading이 끝나고, data가 있을 때
             data: (data) {
               return Text(
                 data.toString(),

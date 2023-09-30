@@ -9,16 +9,17 @@ class SelectProviderScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     print('build');
+    // final state = ref.watch(selectProvider);
+
+    // 특정 속성이 변경되었을 때만, 화면을 새로 랜더링을 하고 싶을 때
     final state = ref.watch(selectProvider.select((value) => value.isSpicy));
-    ref.listen(
-      selectProvider.select((value) => value.hasBought),
-      (previous, next) {
+    ref.listen(selectProvider.select((value) => value.hasBought), (previous, next) {
         print('next: $next');
       },
     );
 
     return DefaultLayout(
-      title: 'SelectProiderScreen',
+      title: 'SelectProviderScreen',
       body: SizedBox(
         width: double.infinity,
         child: Column(

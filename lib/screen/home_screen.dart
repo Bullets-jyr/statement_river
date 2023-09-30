@@ -20,6 +20,8 @@ class HomeScreen extends StatelessWidget {
       title: 'HomeScreen',
       body: ListView(
         children: [
+          // 맛보기
+          // StateProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -30,6 +32,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('StateProviderScreen'),
           ),
+          // StateNotifierProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -40,6 +43,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('StateNotifierProviderScreen'),
           ),
+          // FutureProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -50,6 +54,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('FutureProviderScreen'),
           ),
+          // StreamProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -60,6 +65,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('StreamProviderScreen'),
           ),
+          // FamilyModifierScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -70,6 +76,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('FamilyModifierScreen'),
           ),
+          // AutoDisposeModifierScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -80,6 +87,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('AutoDisposeModifierScreen'),
           ),
+          // ListenProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -90,6 +98,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('ListenProviderScreen'),
           ),
+          // SelectProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
@@ -100,6 +109,7 @@ class HomeScreen extends StatelessWidget {
             },
             child: Text('SelectProviderScreen'),
           ),
+          // ProviderScreen
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(

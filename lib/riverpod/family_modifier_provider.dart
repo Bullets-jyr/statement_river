@@ -12,6 +12,7 @@ class Parameter {
   });
 }
 
+// family<반환 값, 받는 값>
 final familyModifierProvider = FutureProvider.family<List<int>, int>((ref, data) async {
   await Future.delayed(Duration(seconds: 2));
 

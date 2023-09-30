@@ -12,14 +12,17 @@ class StateNotifierProviderScreen extends ConsumerWidget {
     final List<ShoppingItemModel> state = ref.watch(shoppingListProvider);
 
     return DefaultLayout(
-      title: 'StateNotifierProvider',
+      title: 'StateNotifierProviderScreen',
       body: ListView(
         children: state
             .map(
               (e) => CheckboxListTile(
                 title: Text(e.name),
+                // 체크박스의 체크 유무
                 value: e.hasBought,
+                // value: 현재 값
                 onChanged: (value) {
+                  // ref.read(shoppingListProvider.notifier): 클래스
                   ref.read(shoppingListProvider.notifier).toggleHasBought(
                         name: e.name,
                       );

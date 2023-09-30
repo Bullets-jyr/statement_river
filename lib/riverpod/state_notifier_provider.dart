@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statement_river/model/shopping_item_model.dart';
 
+// 위젯에서 사용하기 위한 방법
+// ShoppingListNotifier를 Provider로 만드는 방법
 // StateNotifierProvider는 StateNotifier를 상속한 클래스를 Provider로 만들 수 있는 클래스 입니다.
 final shoppingListProvider =
     StateNotifierProvider<ShoppingListNotifier, List<ShoppingItemModel>>(
@@ -12,6 +14,7 @@ final shoppingListProvider =
 // StateNotifier는 StateNotifierProvider에 제공이될 클래스가 상속하는 것입니다.
 class ShoppingListNotifier extends StateNotifier<List<ShoppingItemModel>> {
   // super에는 처음에 어떤 값으로 상태를 초기화할 지 넣어줘야합니다.
+  // 초기화한 값은 ShoppingListNotifier의 상태가 된다.
   ShoppingListNotifier()
       : super(
           [
@@ -49,7 +52,7 @@ class ShoppingListNotifier extends StateNotifier<List<ShoppingItemModel>> {
         );
 
   void toggleHasBought({required String name}) {
-    // state : super에서 초기화한 값
+    // state : super에서 초기화한 값, 자동으로 제공되는 값
     state = state
         .map((e) => e.name == name
             ? ShoppingItemModel(

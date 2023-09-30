@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:statement_river/model/shopping_item_model.dart';
 
+// 특정 속성이 변경되었을 때만, 반응을 하는 Provider
 final selectProvider = StateNotifierProvider<SelectNotifier, ShoppingItemModel>(
   (ref) => SelectNotifier(),
 );
 
 class SelectNotifier extends StateNotifier<ShoppingItemModel> {
   SelectNotifier()
+      // state의 기본값
       : super(
           ShoppingItemModel(
             name: '김치',
