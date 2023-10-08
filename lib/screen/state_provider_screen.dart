@@ -13,6 +13,7 @@ class StateProviderScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 상태 값을 가져오기 (UI 반영)
     // 변경 감지
+    // build 재실행
     final provider = ref.watch(numberProvider);
 
     return DefaultLayout(
@@ -28,7 +29,7 @@ class StateProviderScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () {
                 // 상태 값을 변경하기 (onPressed)
-                // (state): 현재 상태
+                // (state): 지금 현재 상태
                 ref.read(numberProvider.notifier).update((state) => state + 1);
               },
               child: Text(
@@ -63,6 +64,7 @@ class StateProviderScreen extends ConsumerWidget {
   }
 }
 
+// 스크린을 추가로 만들어봅니다.
 // _NextScreen과 상태 공유 가능
 // One Source Of Truth
 class _NextScreen extends ConsumerWidget {

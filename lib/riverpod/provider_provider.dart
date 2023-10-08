@@ -8,6 +8,7 @@ import 'package:statement_river/riverpod/state_notifier_provider.dart';
 
 final filteredShoppingListProvider = Provider<List<ShoppingItemModel>>(
   (ref) {
+    print('===== filteredShoppingListProvider =====');
     final fillterState = ref.watch(fillterProvider);
     final shoppingListState = ref.watch(shoppingListProvider);
 

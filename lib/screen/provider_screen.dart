@@ -10,7 +10,7 @@ class ProviderScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(filteredShoppingListProvider);
-
+    print('===== build =====');
     // print(state);
     return DefaultLayout(
       title: 'ProviderScreen',
