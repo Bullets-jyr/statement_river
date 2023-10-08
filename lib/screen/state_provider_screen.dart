@@ -39,6 +39,7 @@ class StateProviderScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () {
                 // 상태 값을 변경하는 또 다른 방법
+                // ref.read(numberProvider.notifier).state를 통한 직접 접근
                 ref.read(numberProvider.notifier).state = ref.read(numberProvider.notifier).state - 1;
               },
               child: Text(
