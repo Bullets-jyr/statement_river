@@ -4,8 +4,8 @@ import 'package:statement_river/model/shopping_item_model.dart';
 // 위젯에서 사용하기 위한 방법
 // ShoppingListNotifier를 Provider로 만드는 방법
 // StateNotifierProvider는 StateNotifier를 상속한 클래스를 Provider로 만들 수 있는 클래스 입니다.
-final shoppingListProvider =
-    StateNotifierProvider<ShoppingListNotifier, List<ShoppingItemModel>>(
+// 위젯에서 사용하기 위한 방법
+final shoppingListProvider = StateNotifierProvider<ShoppingListNotifier, List<ShoppingItemModel>>(
   // 관리할 클래스를 인스턴스화 합니다.
   (ref) => ShoppingListNotifier(),
 );
@@ -53,6 +53,7 @@ class ShoppingListNotifier extends StateNotifier<List<ShoppingItemModel>> {
 
   void toggleHasBought({required String name}) {
     // state : super에서 초기화한 값, 자동으로 제공되는 값
+    // 상태를 또 다른 상태로 저장을 합니다.
     state = state
         .map((e) => e.name == name
             ? ShoppingItemModel(
