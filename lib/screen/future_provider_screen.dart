@@ -17,7 +17,7 @@ class FutureProviderScreen extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // 일종의 FutureBuilder
+          // 일종의 FutureBuilder, caching이 됩니다.
           state.when(
             // loading이 끝나고, data가 있을 때
             data: (data) {

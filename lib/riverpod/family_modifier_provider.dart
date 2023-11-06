@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// 어떤 Provider라도 가능합니다.
 // int 대신 Parameter을 넣어줍니다.
 // 위 방법이 귀찮은 과정이기 때문에 Code Generation의 2번이 나왔습니다.
 class Parameter {

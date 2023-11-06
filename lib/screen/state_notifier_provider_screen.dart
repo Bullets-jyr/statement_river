@@ -11,6 +11,8 @@ class StateNotifierProviderScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final List<ShoppingItemModel> state = ref.watch(shoppingListProvider);
 
+    print('===== build =====');
+
     return DefaultLayout(
       title: 'StateNotifierProviderScreen',
       body: ListView(

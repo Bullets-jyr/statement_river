@@ -9,15 +9,15 @@ import 'package:statement_river/riverpod/state_notifier_provider.dart';
 final filteredShoppingListProvider = Provider<List<ShoppingItemModel>>(
   (ref) {
     print('===== filteredShoppingListProvider =====');
-    final fillterState = ref.watch(fillterProvider);
+    final filterState = ref.watch(filterProvider);
     final shoppingListState = ref.watch(shoppingListProvider);
 
-    if (fillterState == FilterState.all) {
+    if (filterState == FilterState.all) {
       return shoppingListState;
     }
 
     return shoppingListState
-        .where((element) => fillterState == FilterState.spicy
+        .where((element) => filterState == FilterState.spicy
             ? element.isSpicy
             : !element.isSpicy)
         .toList();
@@ -36,4 +36,4 @@ enum FilterState {
   all,
 }
 
-final fillterProvider = StateProvider<FilterState>((ref) => FilterState.all);
+final filterProvider = StateProvider<FilterState>((ref) => FilterState.all);

@@ -19,7 +19,7 @@ class _ListenProviderScreenState extends ConsumerState<ListenProviderScreen>
     with TickerProviderStateMixin {
   late final TabController controller;
 
-  // initState에서는 어떤 경우에도 watch를 하면 안됩니다.
+  // initState에서는 어떤 경우에도 watch를 하면 안됩니다. (단발적 실행)
   @override
   void initState() {
     super.initState();

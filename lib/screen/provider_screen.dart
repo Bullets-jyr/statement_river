@@ -26,7 +26,7 @@ class ProviderScreen extends ConsumerWidget {
           ).toList(),
           onSelected: (value) {
             print(value);
-            ref.read(fillterProvider.notifier).update((state) => value);
+            ref.read(filterProvider.notifier).update((state) => value);
           },
         ),
       ],
